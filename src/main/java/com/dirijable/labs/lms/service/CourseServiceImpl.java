@@ -1,7 +1,6 @@
 package com.dirijable.labs.lms.service;
 
 import com.dirijable.labs.lms.db.entity.Course;
-import com.dirijable.labs.lms.db.entity.Student;
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
 import com.dirijable.labs.lms.exception.business.CourseNotFoundException;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CourseServiceImpl implements CourseService{
+public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
     private final CourseMapper courseMapper;
 

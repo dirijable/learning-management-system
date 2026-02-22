@@ -14,7 +14,7 @@ public class CourseRepositoryImpl implements CourseRepository {
     private List<Course> courses = new ArrayList<>();
 
     @Override
-    public synchronized Course save(Course entity) {
+    public Course save(Course entity) {
         entity.setId(nextId);
         nextId = nextId + 1;
         courses.add(entity);

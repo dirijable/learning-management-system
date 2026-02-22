@@ -4,7 +4,11 @@ import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.db.entity.Instructor;
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 
 @Mapper(
         componentModel = "spring",
@@ -20,8 +24,8 @@ public interface CourseMapper {
     CourseResponseDto toResponse(Course entity);
 
     @Named("instructorToFullName")
-    default String instructorToFullName(Instructor instructor){
-        if(instructor == null){
+    default String instructorToFullName(Instructor instructor) {
+        if (instructor == null) {
             return "Unknown";
         }
         return instructor.getFirstName() + " " + instructor.getLastName();
