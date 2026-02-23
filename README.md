@@ -1,8 +1,6 @@
 # Learning Management System
-
 LMS is a lightweight backend service for managing educational courses, instructors, and student enrollments.
 It provides support for course catalogs, category management, instructor profiles, and student registrations, offering a full CRUD workflow with a clear project structure.
-
 # Core Features
     Course management
     Category and specialization management
@@ -28,9 +26,10 @@ All entities in the future will support soft delete using a logical deletion fie
     Students enroll in the course (Many-to-Many relationship)
     Course content can be updated, categories changed, or instructors reassigned
     Course can be archived or soft-deleted
-
 # Architecture
 LMS follows a layered architecture:
 
-Initial implementation uses an InMemory storage. Here you can see the logical db scheme for the upcoming implementation, all tables will support soft-delete:
+Initial implementation uses an InMemory storage
+
+# Sonar link 
 https://sonarcloud.io/summary/overall?id=dirijable_learning-management-system&branch=main
