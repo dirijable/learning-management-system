@@ -1,4 +1,4 @@
-package com.dirijable.labs.lms.service;
+package com.dirijable.labs.lms.service.course;
 
 import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
