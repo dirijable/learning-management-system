@@ -2,7 +2,7 @@ package com.dirijable.labs.lms.controller;
 
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
-import com.dirijable.labs.lms.service.CourseService;
+import com.dirijable.labs.lms.service.course.CourseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/api/v1/course")
+@RequestMapping("/api/v1/courses")
 @RequiredArgsConstructor
 public class CourseRestController {
 
@@ -26,19 +26,16 @@ public class CourseRestController {
 
     @GetMapping("/{id:\\d+}")
     public ResponseEntity<CourseResponseDto> findById(@PathVariable("id") final Long id) {
-
         return ResponseEntity.ok(courseService.findById(id));
     }
 
     @GetMapping
     public ResponseEntity<CourseResponseDto> findByName(@RequestParam("name") final String name) {
-
         return ResponseEntity.ok(courseService.findByName(name));
     }
 
     @PostMapping
     public ResponseEntity<CourseResponseDto> save(@RequestBody @Valid final CourseCreateDto createDto) {
-
         CourseResponseDto responseDto = courseService.save(createDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
