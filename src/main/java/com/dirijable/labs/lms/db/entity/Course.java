@@ -1,5 +1,6 @@
 package com.dirijable.labs.lms.db.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,12 +30,10 @@ public class Course {
     private List<Lesson> lessons = new ArrayList<>();
 
     @Builder.Default
-    private List<Student> students = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public void addLesson(Lesson lesson) {
         lessons.add(lesson);
         lesson.setCourse(this);
     }
-
-
 }
