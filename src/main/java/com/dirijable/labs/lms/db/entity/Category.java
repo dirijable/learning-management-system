@@ -20,5 +20,8 @@ public class Category {
     private String name;
 
     @Builder.Default
+    private boolean isDeleted = false;
+
+    @Builder.Default
     private List<Course> courses = new ArrayList<>();
 }

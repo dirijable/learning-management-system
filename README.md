@@ -1,32 +1,44 @@
-# Learning Management System
-LMS is a lightweight backend service for managing educational courses, instructors, and student enrollments.
-It provides support for course catalogs, category management, instructor profiles, and student registrations, offering a full CRUD workflow with a clear project structure.
-# Core Features
-    Course management
-    Category and specialization management
-    Instructor profiling
-    Student enrollment system
-    Course search and filtering
-    RESTful API
-    Validation and structured error handling
-# Domain Model
-### The system is built around the following core entities:
-    User (Base for Student and Instructor)
-    Course
-    Category
-    Instructor
-    Student
-    Specialization
-    Enrollment
-All entities in the future will support soft delete using a logical deletion field (deleted_at or is_deleted).
+# Learning Management System (LMS)
+LMS is a lightweight backend service designed for managing educational courses, instructor profiles, and student enrollments. The system focuses on data integrity, role-based access control, and a clean, layered architecture.
 
-### Course Lifecycle
-    Course is created by an Instructor and assigned to a Category
-    Course is published and becomes available for search via API
-    Students enroll in the course (Many-to-Many relationship)
-    Course content can be updated, categories changed, or instructors reassigned
-    Course can be archived or soft-deleted
-# Architecture
+### Core Features
+
+    1. Course Management: Full CRUD workflow for courses, including associations with categories and instructors.
+    2. Instructor Profiling: Management of expert profiles (bio, specialization) handled by the Administrator.
+    3. Curriculum Structure: Courses are divided into multiple Lessons (One-to-Many relationship).
+    4. Student Enrollment: Many-to-Many relationship between Users and Courses.
+    5. Role-Based Access Control (RBAC): 
+        ADMIN: Full control over courses, categories, and instructor data.
+        USER: Browsing courses and self-enrollment.
+    6. Soft Delete: Logical deletion mechanism for Categories to prevent accidental data loss.
+    7. Transactional Integrity: Atomic operations ensuring database consistency (e.g., creating a course with an initial lesson).
+
+### Domain Model
+The system is built around 5 core entities:
+
+    1. User: Handles authentication and authorization. Contains email, password, and role (ADMIN/USER).
+    2. Course: The central entity. Linked to an Instructor, a Category, and contains a list of Lessons.
+    3. Instructor: A specialized profile entity containing descriptive info about the teacher.
+    4. Category: A lookup entity for course classification. Supports soft-delete logic.
+    5. Lesson: A child entity of a Course, representing a single unit of study.
+
+### Architecture
+
+The project follows a Layered Architecture pattern:
+
+    1. Web Layer: REST Controllers handling HTTP requests and DTO validation.
+    2. Service Layer: Encapsulates business logic and manages transactions via @Transactional.
+    3. Persistence Layer: Spring Data JPA repositories for relational database interaction.
+    4. Security Layer: Spring Security with JWT (JSON Web Token) for stateless authentication.
+
+### Tech Stack
+
+    1. Java 17 / Spring Boot 3
+    2. Spring Data JPA — ORM and Database interaction.
+    3. Spring Security + JWT — Authentication and Authorization.
+    4. PostgreSQL — Relational database storage.
+    5. Lombok & MapStruct — Boilerplate reduction and DTO mapping.# Architecture
+
 LMS follows a layered architecture:
 
 Initial implementation uses an InMemory storage

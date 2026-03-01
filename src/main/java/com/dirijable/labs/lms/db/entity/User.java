@@ -27,5 +27,6 @@ public class User {
 
     private UserRole role;
 
+    @Builder.Default
     private List<Course> courses = new ArrayList<>();
 }

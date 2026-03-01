@@ -1,16 +1,17 @@
 package com.dirijable.labs.lms.db.entity;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Instructor{
+public class Instructor {
 
     private Long id;
 

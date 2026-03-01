@@ -20,7 +20,7 @@ public interface CourseMapper {
     Course toEntity(CourseCreateDto createDto);
 
     @Mapping(target = "categoryName", source = "category.name")
-    @Mapping(target = "instructorFullName", source = "category.instructor", qualifiedByName = "instructorToFullName")
+    @Mapping(target = "instructorFullName", source = "entity.instructor", qualifiedByName = "instructorToFullName")
     CourseResponseDto toResponse(Course entity);
 
     @Named("instructorToFullName")
