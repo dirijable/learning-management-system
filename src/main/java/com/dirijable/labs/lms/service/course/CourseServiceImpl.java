@@ -3,14 +3,15 @@ package com.dirijable.labs.lms.service.course;
 import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
-import com.dirijable.labs.lms.exception.business.CourseNotFoundException;
+import com.dirijable.labs.lms.exception.business.notfound.CourseNotFoundException;
 import com.dirijable.labs.lms.mapper.CourseMapper;
-import com.dirijable.labs.lms.repository.CourseRepository;
+import com.dirijable.labs.lms.db.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
