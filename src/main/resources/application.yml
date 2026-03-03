@@ -5,3 +5,7 @@ server:
   port: 8080
   servlet:
     context-path: /
+jwt:
+  jwt-access-expiration: ${JWT_ACCESS_EXPIRATION}
+  jwt-refresh-expitation: ${JWT_REFRESH_EXPIRATION}
+  jwt-signature: ${JWT_ACCESS_TOKEN}

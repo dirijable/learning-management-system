@@ -8,11 +8,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
+
     Optional<Course> findByName(String name);
 
     @Query("""
             SELECT co FROM Course co
-            JOIN fetch co.category ca
+            JOIN FETCH co.category ca
             WHERE ca.name = :categoryName
             """)
     List<Course> findAllByCategoryName(String categoryName);
