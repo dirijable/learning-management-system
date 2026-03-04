@@ -10,4 +10,6 @@ public interface RefreshTokenRepository extends CrudRepository<RefreshToken, Lon
     Optional<RefreshToken> findByToken(String token);
 
     Optional<RefreshToken> findByUserEmail(String email);
+
+    void deleteAllByUserId(Long userId);
 }

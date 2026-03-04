@@ -5,7 +5,12 @@ import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.dto.category.CategoryCreateDto;
 import com.dirijable.labs.lms.dto.category.CategoryResponseDto;
 import com.dirijable.labs.lms.dto.category.CategoryUpdateDto;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.Named;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.Collections;
 import java.util.List;

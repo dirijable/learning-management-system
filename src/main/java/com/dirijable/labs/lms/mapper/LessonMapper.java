@@ -4,7 +4,11 @@ import com.dirijable.labs.lms.db.entity.Lesson;
 import com.dirijable.labs.lms.dto.lesson.LessonCreateDto;
 import com.dirijable.labs.lms.dto.lesson.LessonResponseDto;
 import com.dirijable.labs.lms.dto.lesson.LessonUpdateDto;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 
 @Mapper(
         componentModel = "spring",
