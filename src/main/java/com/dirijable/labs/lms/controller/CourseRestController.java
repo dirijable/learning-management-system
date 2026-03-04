@@ -2,6 +2,7 @@ package com.dirijable.labs.lms.controller;
 
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
+import com.dirijable.labs.lms.dto.course.CourseUpdateDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseFullResponseDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseResponseTxDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseWithLessonDto;
@@ -14,13 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -71,6 +66,22 @@ public class CourseRestController {
                                          @AuthenticationPrincipal final Jwt jwt) {
         courseService.enrollUser(courseId, jwt.getClaim("sub"));
         return ResponseEntity.ok("Successfully enrolled!");
+    }
+
+    @PatchMapping("/{id:\\d+}")
+    @PreAuthorize("#hasRole('ADMIN')")
+    public ResponseEntity<CourseResponseDto> update(@PathVariable("id") final Long id,
+                                                    @RequestBody @Valid CourseUpdateDto updateDto) {
+        CourseResponseDto update = courseService.update(updateDto, id);
+        return ResponseEntity.ok(update);
+    }
+
+    @DeleteMapping("/{id:\\d+}")
+    @PreAuthorize("#hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteById(@PathVariable("id") final Long id) {
+        courseService.deleteById(id);
+        return ResponseEntity.noContent()
+                .build();
     }
 
     @PostMapping

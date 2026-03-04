@@ -3,5 +3,3 @@ databaseChangeLog:
       file: db/changelog/db.changelog-1.0-tables.sql
   - include:
       file: db/changelog/db.changelog-1.1-indexes.sql
-  - include:
-      file: db/changelog/db.changelog-1.2-text.sql

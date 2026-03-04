@@ -11,4 +11,5 @@ public record CourseFullResponseDto(
         InstructorResponseDto instructor,
         List<LessonResponseDto> lessons,
         String category
-) {}
+) {
+}
