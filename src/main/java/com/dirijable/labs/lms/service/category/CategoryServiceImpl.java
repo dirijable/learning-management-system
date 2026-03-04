@@ -21,12 +21,13 @@ public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
+    private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
 
     @Override
     public CategoryResponseDto findById(Long id) {
         return categoryRepository.findById(id)
                 .map(categoryMapper::toResponse)
-                .orElseThrow(() -> new CategoryNotFoundException("Category with id = '%d' not found".formatted(id)));
+                .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(id)));
     }
 
     @Override
@@ -63,14 +64,14 @@ public class CategoryServiceImpl implements CategoryService {
                     return categoryRepository.save(category);
                 })
                 .map(categoryMapper::toResponse)
-                .orElseThrow(() -> new CategoryNotFoundException("Category with id = '%d' not found".formatted(id)));
+                .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(id)));
     }
 
     @Override
     @Transactional
     public void deleteById(Long id) {
         Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new CategoryNotFoundException("Category with id = '%d' not found".formatted(id)));
+                .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(id)));
         category.setDeleted(true);
     }
 }

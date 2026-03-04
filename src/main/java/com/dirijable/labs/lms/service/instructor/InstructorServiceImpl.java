@@ -20,6 +20,7 @@ public class InstructorServiceImpl implements InstructorService {
 
     private final InstructorRepository instructorRepository;
     private final InstructorMapper instructorMapper;
+    private static final String INSTRUCTOR_NOT_FOUND = "Instructor with id = '%d' not found";
 
     @Override
     public List<InstructorResponseDto> findAll() {
@@ -33,7 +34,7 @@ public class InstructorServiceImpl implements InstructorService {
     public InstructorResponseDto findById(Long instructorId) {
         return instructorRepository.findById(instructorId)
                 .map(instructorMapper::toResponse)
-                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found with id: " + instructorId));
+                .orElseThrow(() -> new InstructorNotFoundException(INSTRUCTOR_NOT_FOUND.formatted(instructorId)));
     }
 
     @Override
@@ -52,14 +53,14 @@ public class InstructorServiceImpl implements InstructorService {
                     return instructor;
                 })
                 .map(instructorMapper::toResponse)
-                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found with id: " + instructorId));
+                .orElseThrow(() -> new InstructorNotFoundException(INSTRUCTOR_NOT_FOUND.formatted(instructorId)));
     }
 
     @Override
     @Transactional
     public void delete(Long instructorId) {
         Instructor instructor = instructorRepository.findById(instructorId)
-                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found with id: " + instructorId));
+                .orElseThrow(() -> new InstructorNotFoundException(INSTRUCTOR_NOT_FOUND.formatted(instructorId)));
         instructorRepository.delete(instructor);
     }
 }

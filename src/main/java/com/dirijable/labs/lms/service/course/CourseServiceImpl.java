@@ -23,6 +23,7 @@ import com.dirijable.labs.lms.exception.business.notfound.CategoryNotFoundExcept
 import com.dirijable.labs.lms.exception.business.notfound.CourseNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.InstructorNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.UserNotFoundException;
+import com.dirijable.labs.lms.exception.business.problem.SimulatedException;
 import com.dirijable.labs.lms.mapper.CourseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -39,13 +40,15 @@ public class CourseServiceImpl implements CourseService {
     private final LessonRepository lessonRepository;
     private final UserRepository userRepository;
     private final CourseMapper courseMapper;
+    private static final String COURSE_ID_NOT_FOUND = "course with id = '%d' not found";
+    private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
 
     @Override
     @Transactional(readOnly = true)
     public CourseResponseDto findById(Long id) {
         return courseRepository.findById(id)
                 .map(courseMapper::toResponse)
-                .orElseThrow(() -> new CourseNotFoundException("course with id='%d' not found".formatted(id)));
+                .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(id)));
 
     }
 
@@ -61,7 +64,7 @@ public class CourseServiceImpl implements CourseService {
     @Transactional
     public CourseResponseDto save(CourseCreateDto createDto) {
         Category category = categoryRepository.findById(createDto.categoryId())
-                .orElseThrow(() -> new CategoryNotFoundException("category with id='%d' not found".formatted(createDto.categoryId())));
+                .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(createDto.categoryId())));
         Instructor instructor = instructorRepository.findById(createDto.instructorId())
                 .orElseThrow(() -> new InstructorNotFoundException("instructor with id='%d' not found".formatted(createDto.instructorId())));
         Course toEntity = courseMapper.toEntity(createDto, category, instructor);
@@ -72,10 +75,10 @@ public class CourseServiceImpl implements CourseService {
     @Transactional
     public CourseResponseDto update(CourseUpdateDto updateDto, Long courseId) {
         Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException("course with id='%d' not found".formatted(courseId)));
+                .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(courseId)));
         Category category = (updateDto.categoryId() != null)
                 ? categoryRepository.findById(updateDto.categoryId())
-                .orElseThrow(() -> new CategoryNotFoundException("category with id='%d' not found".formatted(updateDto.categoryId())))
+                .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(updateDto.categoryId())))
                 : course.getCategory();
         Instructor instructor = (updateDto.instructorId() != null)
                 ? instructorRepository.findById(updateDto.instructorId())
@@ -119,7 +122,7 @@ public class CourseServiceImpl implements CourseService {
     @Transactional
     public void deleteById(Long courseId) {
         Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException("course with id='%d' not found".formatted(courseId)));
+                .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(courseId)));
         courseRepository.delete(course);
     }
 
@@ -148,9 +151,9 @@ public class CourseServiceImpl implements CourseService {
 
     private CourseResponseTxDto saveCourseAndLessonsInternal(CourseWithLessonDto dto, boolean fail) {
         Category category = categoryRepository.findById(dto.categoryId())
-                .orElseThrow(() -> new RuntimeException("Category not found"));
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
         Instructor instructor = instructorRepository.findById(dto.instructorId())
-                .orElseThrow(() -> new RuntimeException("Instructor not found"));
+                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found"));
 
         Course course = new Course();
         course.setName(dto.name());
@@ -167,7 +170,7 @@ public class CourseServiceImpl implements CourseService {
         lesson.setDurationMinutes(dto.durationMinutes());
 
         if (fail) {
-            throw new RuntimeException("Simulated failure! Check if Course ID " + course.getId() + " stayed in DB.");
+            throw new SimulatedException("Simulated failure! Check if Course ID " + course.getId() + " stayed in DB.");
         }
 
         lessonRepository.save(lesson);

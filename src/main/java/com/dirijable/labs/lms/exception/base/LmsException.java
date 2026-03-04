@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 public class LmsException extends RuntimeException {
     private final HttpStatus status;
 
-    public LmsException(String message, HttpStatus status) {
+    protected LmsException(String message, HttpStatus status) {
         super(message);
         this.status = status;
     }
