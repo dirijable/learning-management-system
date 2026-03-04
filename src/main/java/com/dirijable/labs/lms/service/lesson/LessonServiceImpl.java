@@ -1,7 +1,6 @@
 package com.dirijable.labs.lms.service.lesson;
 
 import com.dirijable.labs.lms.db.entity.Course;
-import com.dirijable.labs.lms.db.entity.Instructor;
 import com.dirijable.labs.lms.db.entity.Lesson;
 import com.dirijable.labs.lms.db.repository.CourseRepository;
 import com.dirijable.labs.lms.db.repository.LessonRepository;

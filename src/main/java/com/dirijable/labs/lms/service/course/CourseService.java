@@ -2,6 +2,8 @@ package com.dirijable.labs.lms.service.course;
 
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
+import com.dirijable.labs.lms.dto.course.CourseUpdateDto;
+import com.dirijable.labs.lms.dto.course.problem.CourseFullResponseDto;
 
 public interface CourseService {
     CourseResponseDto findById(Long id);
@@ -9,4 +11,12 @@ public interface CourseService {
     CourseResponseDto findByName(String name);
 
     CourseResponseDto save(CourseCreateDto createDto);
+
+    CourseResponseDto update(CourseUpdateDto updateDto, Long courseId);
+
+    CourseFullResponseDto findFullById(Long id, boolean optimized);
+
+    void deleteById(Long courseId);
+
+    void enrollUser(Long courseId, String userEmail);
 }

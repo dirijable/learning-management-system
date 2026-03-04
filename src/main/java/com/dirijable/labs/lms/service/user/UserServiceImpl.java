@@ -1,6 +1,7 @@
 package com.dirijable.labs.lms.service.user;
 
 import com.dirijable.labs.lms.db.entity.User;
+import com.dirijable.labs.lms.db.entity.UserRole;
 import com.dirijable.labs.lms.dto.user.UserCreateDto;
 import com.dirijable.labs.lms.dto.user.UserResponseDto;
 import com.dirijable.labs.lms.dto.user.UserUpdateDto;
@@ -41,12 +42,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserResponseDto save(UserCreateDto createDto) {
         if (userRepository.existsByEmail(createDto.email())) {
             throw new EmailAlreadyExistException("Email %s already exist".formatted(createDto.email()));
         }
         User entity = userMapper.toEntity(createDto);
         entity.setPassword(passwordEncoder.encode(createDto.password()));
+        entity.setRole(UserRole.USER);
         User savedEntity = userRepository.save(entity);
         return userMapper.toResponse(savedEntity);
     }
