@@ -1,24 +1,26 @@
 services:
-  backend:
-    build: ./
-    env_file:
-      - .env
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
-      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-      SPRING_DATASOURCE_DRIVER_CLASS_NAME: ${DB_DRIVER}
-      JWT_SECRET: ${JWT_SECRET}
-      JWT_ACCESS_EXPIRATION: ${JWT_ACCESS_EXPIRATION}
-      JWT_REFRESH_EXPIRATION: ${JWT_REFRESH_EXPIRATION}
-    ports:
-      - "8080:8080"
-    depends_on:
-      db:
-        condition: service_healthy
-    restart: always
+#  backend:
+#    build: ./
+#    env_file:
+#      - .env
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+#      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+#      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+#      SPRING_DATASOURCE_DRIVER_CLASS_NAME: ${DB_DRIVER}
+#      JWT_SECRET: ${JWT_SECRET}
+#      JWT_ACCESS_EXPIRATION: ${JWT_ACCESS_EXPIRATION}
+#      JWT_REFRESH_EXPIRATION: ${JWT_REFRESH_EXPIRATION}
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      db:
+#        condition: service_healthy
+#    restart: always
   db:
     image: postgres:18.1-alpine
+    ports:
+      - "5433:5432"
     env_file:
       - .env
     environment:

@@ -19,7 +19,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
@@ -28,14 +27,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto findById(Long id) {
-    return userRepository.findById(id)
+    return userRepository.findByIdOptimized(id)
                 .map(userMapper::toResponse)
                 .orElseThrow(() -> new UserNotFoundException("User not found with id " + id));
     }
 
     @Override
     public List<UserResponseDto> findAll() {
-        return userRepository.findAll()
+        return userRepository.findAllOptimized()
                 .stream()
                 .map(userMapper::toResponse)
                 .toList();
@@ -55,6 +54,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserResponseDto update(UserUpdateDto createDto, Long userId) {
         return userRepository.findById(userId)
                 .map(user -> {
@@ -66,6 +66,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteById(Long userId) {
         User instructor = userRepository.findById(userId)
                 .orElseThrow(() -> new InstructorNotFoundException("Instructor not found with id: " + userId));

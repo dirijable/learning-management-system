@@ -16,9 +16,6 @@ public record LessonCreateDto(
 
         @Positive(message = "Длительность должна быть больше 0")
         @NotNull
-        Integer durationMinutes,
-
-        @Positive @NotNull(message = "ID курса обязателен")
-        Long courseId
+        Integer durationMinutes
 ) {
 }

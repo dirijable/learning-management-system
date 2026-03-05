@@ -27,8 +27,6 @@ public interface CategoryMapper {
 
     void updateEntity(CategoryUpdateDto dto, @MappingTarget Category entity);
 
-    @Mapping(target = "coursesCount",
-            expression = "java(entity.getCourses() != null ? entity.getCourses().size() : 0)")
     @Mapping(target = "coursesIds", source = "entity.courses", qualifiedByName = "coursesToIds")
     CategoryResponseDto toResponse(Category entity);
 

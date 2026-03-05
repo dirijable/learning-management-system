@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 checkstyle.xml
 .env
+.gitignore
 
 ### STS ###
 .apt_generated

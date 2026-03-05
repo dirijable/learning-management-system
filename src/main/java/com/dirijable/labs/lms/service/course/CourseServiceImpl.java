@@ -44,7 +44,6 @@ public class CourseServiceImpl implements CourseService {
     private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
 
     @Override
-    @Transactional(readOnly = true)
     public CourseResponseDto findById(Long id) {
         return courseRepository.findById(id)
                 .map(courseMapper::toResponse)
@@ -53,11 +52,18 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public CourseResponseDto findByName(String name) {
         return courseRepository.findByName(name)
                 .map(courseMapper::toResponse)
                 .orElseThrow(() -> new CourseNotFoundException("course with name='%s' not found".formatted(name)));
+    }
+
+    @Override
+    public List<CourseResponseDto> findAll() {
+        return courseRepository.findAllOptimized()
+                .stream()
+                .map(courseMapper::toResponse)
+                .toList();
     }
 
     @Override
@@ -94,21 +100,20 @@ public class CourseServiceImpl implements CourseService {
         Course course = (optimized
                 ? courseRepository.findFullByIdOptimized(id)
                 : courseRepository.findById(id))
-                    .orElseThrow(() -> new RuntimeException("Course not found"));
-
-        InstructorResponseDto instructorDto = new InstructorResponseDto(
+                .orElseThrow(() -> new CourseNotFoundException("Course not found"));
+        InstructorResponseDto instructorDto = course.getInstructor() == null
+                ? null
+                : new InstructorResponseDto(
                 course.getInstructor().getId(),
                 course.getInstructor().getFirstName(),
                 course.getInstructor().getLastName(),
                 course.getInstructor().getDescription(),
                 course.getInstructor().getSpecialization()
         );
-
         List<LessonResponseDto> lessonDtos = course.getLessons()
                 .stream()
                 .map(l -> new LessonResponseDto(l.getId(), l.getTitle(), l.getContent(), l.getDurationMinutes(), course.getId()))
                 .toList();
-
         return new CourseFullResponseDto(
                 course.getId(),
                 course.getName(),
@@ -153,7 +158,7 @@ public class CourseServiceImpl implements CourseService {
         Category category = categoryRepository.findById(dto.categoryId())
                 .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
         Instructor instructor = instructorRepository.findById(dto.instructorId())
-                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found"));
+                .orElse(null);
 
         Course course = new Course();
         course.setName(dto.name());
@@ -179,7 +184,7 @@ public class CourseServiceImpl implements CourseService {
                 course.getId(),
                 course.getName(),
                 course.getDescription(),
-                instructor.getLastName(),
+                instructor == null ? null : instructor.getLastName(),
                 category.getName(),
                 List.of(lesson.getTitle())
         );

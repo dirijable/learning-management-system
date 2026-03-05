@@ -46,7 +46,7 @@ public interface CourseMapper {
     @Named("instructorToFullName")
     default String instructorToFullName(Instructor instructor) {
         if (instructor == null) {
-            return "Unknown";
+            return null;
         }
         return instructor.getFirstName() + " " + instructor.getLastName();
     }

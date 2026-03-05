@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
@@ -16,4 +17,8 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     @EntityGraph(attributePaths = {"instructor", "category", "lessons"})
     @Query("SELECT c FROM Course c WHERE c.id = :id")
     Optional<Course> findFullByIdOptimized(Long id);
+
+    @EntityGraph(attributePaths = {"instructor", "category"})
+    @Query("SELECT c FROM Course c")
+    List<Course> findAllOptimized();
 }

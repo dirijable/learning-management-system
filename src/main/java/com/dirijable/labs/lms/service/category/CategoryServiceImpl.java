@@ -16,7 +16,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
@@ -25,14 +24,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDto findById(Long id) {
-        return categoryRepository.findById(id)
+        return categoryRepository.findByIdOptimized(id)
                 .map(categoryMapper::toResponse)
                 .orElseThrow(() -> new CategoryNotFoundException(CATEGORY_NOT_FOUND.formatted(id)));
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<CategoryResponseDto> findAll() {
-        return categoryRepository.findAll()
+        return categoryRepository.findAllOptimized()
                 .stream()
                 .map(categoryMapper::toResponse)
                 .toList();

@@ -15,7 +15,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class InstructorServiceImpl implements InstructorService {
 
     private final InstructorRepository instructorRepository;
