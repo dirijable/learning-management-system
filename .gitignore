@@ -7,7 +7,7 @@ build/
 checkstyle.xml
 .env
 .gitignore
-
+src/main/resources/application.yml
 ### STS ###
 .apt_generated
 .classpath
