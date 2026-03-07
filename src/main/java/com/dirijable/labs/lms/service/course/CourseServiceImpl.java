@@ -37,7 +37,6 @@ public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
     private final CategoryRepository categoryRepository;
     private final InstructorRepository instructorRepository;
-    private final LessonRepository lessonRepository;
     private final UserRepository userRepository;
     private final CourseMapper courseMapper;
     private static final String COURSE_ID_NOT_FOUND = "course with id = '%d' not found";
@@ -145,48 +144,5 @@ public class CourseServiceImpl implements CourseService {
         courseRepository.save(course);
     }
 
-    @Transactional
-    public CourseResponseTxDto createWithLessonsTransactional(CourseWithLessonDto dto, boolean fail) {
-        return saveCourseAndLessonsInternal(dto, fail);
-    }
 
-    public CourseResponseTxDto createWithLessonsNonTransactional(CourseWithLessonDto dto, boolean fail) {
-        return saveCourseAndLessonsInternal(dto, fail);
-    }
-
-    private CourseResponseTxDto saveCourseAndLessonsInternal(CourseWithLessonDto dto, boolean fail) {
-        Category category = categoryRepository.findById(dto.categoryId())
-                .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
-        Instructor instructor = instructorRepository.findById(dto.instructorId())
-                .orElse(null);
-
-        Course course = new Course();
-        course.setName(dto.name());
-        course.setDescription(dto.description());
-        course.setCategory(category);
-        course.setInstructor(instructor);
-
-        course = courseRepository.saveAndFlush(course);
-
-        Lesson lesson = new Lesson();
-        lesson.setCourse(course);
-        lesson.setTitle(dto.lessonTitle());
-        lesson.setContent(dto.lessonContent());
-        lesson.setDurationMinutes(dto.durationMinutes());
-
-        if (fail) {
-            throw new SimulatedException("Simulated failure! Check if Course ID " + course.getId() + " stayed in DB.");
-        }
-
-        lessonRepository.save(lesson);
-
-        return new CourseResponseTxDto(
-                course.getId(),
-                course.getName(),
-                course.getDescription(),
-                instructor == null ? null : instructor.getLastName(),
-                category.getName(),
-                List.of(lesson.getTitle())
-        );
-    }
 }
