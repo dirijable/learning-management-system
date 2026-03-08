@@ -4,15 +4,17 @@ import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
 import com.dirijable.labs.lms.dto.course.CourseUpdateDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseFullResponseDto;
-
-import java.util.List;
+import com.dirijable.labs.lms.dto.page.PageResponse;
+import org.springframework.data.domain.Pageable;
 
 public interface CourseService {
     CourseResponseDto findById(Long id);
 
+    PageResponse<CourseResponseDto> findByCategoryName(String categoryName, Pageable pageable);
+
     CourseResponseDto findByName(String name);
 
-    List<CourseResponseDto> findAll();
+    PageResponse<CourseResponseDto> findAll(Pageable pageable);
 
     CourseResponseDto save(CourseCreateDto createDto);
 

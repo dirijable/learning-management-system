@@ -4,13 +4,11 @@ import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
 import com.dirijable.labs.lms.dto.course.CourseUpdateDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseFullResponseDto;
-import com.dirijable.labs.lms.dto.course.problem.CourseResponseTxDto;
-import com.dirijable.labs.lms.dto.course.problem.CourseWithLessonDto;
+import com.dirijable.labs.lms.dto.page.PageResponse;
 import com.dirijable.labs.lms.service.course.CourseService;
-import com.dirijable.labs.lms.service.course.CourseServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -27,7 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/courses")
@@ -36,6 +33,15 @@ public class CourseRestController {
 
     private final CourseService courseService;
 
+    @GetMapping
+    public ResponseEntity<PageResponse<CourseResponseDto>> findAll(@RequestParam(name = "categoryName", required = false) String categoryName,
+                                                                   Pageable pageable) {
+        return ResponseEntity.ok(categoryName == null
+                ? courseService.findAll(pageable)
+                : courseService.findByCategoryName(categoryName, pageable)
+        );
+    }
+
     @GetMapping("/demonstrate/{id:\\d+}")
     public ResponseEntity<CourseFullResponseDto> getFullCourse(
             @PathVariable Long id,
@@ -43,29 +49,9 @@ public class CourseRestController {
         return ResponseEntity.ok(courseService.findFullById(id, optimized));
     }
 
-    @PostMapping("/with-lessons")
-    public ResponseEntity<CourseResponseTxDto> createWithLessons(
-            @Valid @RequestBody CourseWithLessonDto dto,
-            @RequestParam(defaultValue = "false") boolean fail,
-            @RequestParam(defaultValue = "true") boolean transactional) {
-
-        if (transactional) {
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(((CourseServiceImpl)courseService).createWithLessonsTransactional(dto, fail));
-        } else {
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(((CourseServiceImpl)courseService).createWithLessonsNonTransactional(dto, fail));
-        }
-    }
-
     @GetMapping("/{id:\\d+}")
     public ResponseEntity<CourseResponseDto> findById(@PathVariable("id") final Long id) {
         return ResponseEntity.ok(courseService.findById(id));
-    }
-
-    @GetMapping
-    public ResponseEntity<List<CourseResponseDto>> findAll() {
-        return ResponseEntity.ok(courseService.findAll());
     }
 
     @PostMapping("/{courseId:\\d+}/enroll")
