@@ -1,16 +1,16 @@
 spring:
   application:
     name: fitness-tracker-api
-#  datasource:
-#    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
-#    url: ${SPRING_DATASOURCE_URL}
-#    username: ${SPRING_DATASOURCE_USERNAME}
-#    password: ${SPRING_DATASOURCE_PASSWORD}
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/lms_db
-    username: postgres
-    password: postgres
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5433/lms_db
+#    username: postgres
+#    password: postgres
   jpa:
     show-sql: true
     properties:
@@ -25,12 +25,12 @@ logging:
       springframework:
         security: debug
 jwt:
-#  secret-key: ${JWT_SECRET}
-#  access-token-expiration: ${JWT_ACCESS_EXPIRATION}
-#  refresh-token-expiration: ${JWT_REFRESH_EXPIRATION}
-  secret-key: 452f6f4d306b66314f346b7a69514e4b506b325254336c584a5647504369426d
-  access-token-expiration: 259200000
-  refresh-token-expiration: 259200000
+  secret-key: ${JWT_SECRET}
+  access-token-expiration: ${JWT_ACCESS_EXPIRATION}
+  refresh-token-expiration: ${JWT_REFRESH_EXPIRATION}
+#  secret-key: 452f6f4d306b66314f346b7a69514e4b506b325254336c584a5647504369426d
+#  access-token-expiration: 259200000
+#  refresh-token-expiration: 259200000
 
 server:
   port: 8080

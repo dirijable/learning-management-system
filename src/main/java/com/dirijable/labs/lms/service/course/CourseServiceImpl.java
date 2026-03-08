@@ -1,31 +1,32 @@
 package com.dirijable.labs.lms.service.course;
 
+import com.dirijable.labs.lms.cache.CoursePageCache;
 import com.dirijable.labs.lms.db.entity.Category;
 import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.db.entity.Instructor;
-import com.dirijable.labs.lms.db.entity.Lesson;
 import com.dirijable.labs.lms.db.entity.User;
 import com.dirijable.labs.lms.db.repository.CategoryRepository;
 import com.dirijable.labs.lms.db.repository.CourseRepository;
 import com.dirijable.labs.lms.db.repository.InstructorRepository;
-import com.dirijable.labs.lms.db.repository.LessonRepository;
 import com.dirijable.labs.lms.db.repository.UserRepository;
+import com.dirijable.labs.lms.dto.cache.CacheKey;
+import com.dirijable.labs.lms.dto.cache.GenericCacheKey;
 import com.dirijable.labs.lms.dto.course.CourseCreateDto;
 import com.dirijable.labs.lms.dto.course.CourseResponseDto;
 import com.dirijable.labs.lms.dto.course.CourseUpdateDto;
 import com.dirijable.labs.lms.dto.course.problem.CourseFullResponseDto;
-import com.dirijable.labs.lms.dto.course.problem.CourseResponseTxDto;
-import com.dirijable.labs.lms.dto.course.problem.CourseWithLessonDto;
 import com.dirijable.labs.lms.dto.instructor.InstructorResponseDto;
 import com.dirijable.labs.lms.dto.lesson.LessonResponseDto;
+import com.dirijable.labs.lms.dto.page.PageResponse;
 import com.dirijable.labs.lms.exception.business.conflict.UserAtCourseAlreadyExistException;
 import com.dirijable.labs.lms.exception.business.notfound.CategoryNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.CourseNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.InstructorNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.UserNotFoundException;
-import com.dirijable.labs.lms.exception.business.problem.SimulatedException;
 import com.dirijable.labs.lms.mapper.CourseMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,14 +34,47 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
     private final CategoryRepository categoryRepository;
     private final InstructorRepository instructorRepository;
     private final UserRepository userRepository;
     private final CourseMapper courseMapper;
+    private final CoursePageCache coursePageCache;
     private static final String COURSE_ID_NOT_FOUND = "course with id = '%d' not found";
     private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
+
+
+    @Override
+    public PageResponse<CourseResponseDto> findByCategoryName(String categoryName, Pageable pageable) {
+        CacheKey key = GenericCacheKey.of(List.of(categoryName, pageable.getPageNumber(), pageable.getPageSize()));
+        return coursePageCache.get(key)
+                .orElseGet(() -> {
+                    PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
+                            courseRepository
+                                    .findByCategoryName(categoryName, pageable)
+                                    .map(courseMapper::toResponse)
+                    );
+                    coursePageCache.put(key, pageResponse);
+                    return pageResponse;
+                });
+    }
+
+    @Override
+    public PageResponse<CourseResponseDto> findAll(Pageable pageable) {
+        CacheKey key = GenericCacheKey.of(List.of(pageable.getPageNumber(), pageable.getPageSize()));
+        return coursePageCache.get(key)
+                .orElseGet(() -> {
+                    PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
+                            courseRepository
+                                    .findAllOptimized(pageable)
+                                    .map(courseMapper::toResponse)
+                    );
+                    coursePageCache.put(key, pageResponse);
+                    return pageResponse;
+                });
+    }
 
     @Override
     public CourseResponseDto findById(Long id) {
@@ -58,14 +92,6 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseResponseDto> findAll() {
-        return courseRepository.findAllOptimized()
-                .stream()
-                .map(courseMapper::toResponse)
-                .toList();
-    }
-
-    @Override
     @Transactional
     public CourseResponseDto save(CourseCreateDto createDto) {
         Category category = categoryRepository.findById(createDto.categoryId())
@@ -73,6 +99,7 @@ public class CourseServiceImpl implements CourseService {
         Instructor instructor = instructorRepository.findById(createDto.instructorId())
                 .orElseThrow(() -> new InstructorNotFoundException("instructor with id='%d' not found".formatted(createDto.instructorId())));
         Course toEntity = courseMapper.toEntity(createDto, category, instructor);
+        coursePageCache.invalidateCache();
         return courseMapper.toResponse(courseRepository.save(toEntity));
     }
 
@@ -90,8 +117,33 @@ public class CourseServiceImpl implements CourseService {
                 .orElseThrow(() -> new InstructorNotFoundException("instructor with id='%d' not found".formatted(updateDto.instructorId())))
                 : course.getInstructor();
         courseMapper.updateEntity(updateDto, category, instructor, course);
+        coursePageCache.invalidateCache();
         return courseMapper.toResponse(course);
     }
+
+    @Override
+    @Transactional
+    public void deleteById(Long courseId) {
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(courseId)));
+        courseRepository.delete(course);
+        coursePageCache.invalidateCache();
+    }
+
+    @Override
+    @Transactional
+    public void enrollUser(Long courseId, String userEmail) {
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException("Course not found"));
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+        if (course.getUsers().contains(user)) {
+            throw new UserAtCourseAlreadyExistException("User already enrolled in this course");
+        }
+        course.addUser(user);
+        courseRepository.save(course);
+    }
+
 
     @Override
     @Transactional(readOnly = true)
@@ -121,28 +173,4 @@ public class CourseServiceImpl implements CourseService {
                 course.getCategory().getName()
         );
     }
-
-    @Override
-    @Transactional
-    public void deleteById(Long courseId) {
-        Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(courseId)));
-        courseRepository.delete(course);
-    }
-
-    @Override
-    @Transactional
-    public void enrollUser(Long courseId, String userEmail) {
-        Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException("Course not found"));
-        User user = userRepository.findByEmail(userEmail)
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
-        if (course.getUsers().contains(user)) {
-            throw new UserAtCourseAlreadyExistException("User already enrolled in this course");
-        }
-        course.addUser(user);
-        courseRepository.save(course);
-    }
-
-
 }
