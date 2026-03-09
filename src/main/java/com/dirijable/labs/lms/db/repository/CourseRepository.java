@@ -14,6 +14,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     @Query("""
             SELECT c FROM Course c
+            LEFT JOIN FETCH c.instructor
             JOIN FETCH c.category cat
             WHERE cat.name = :categoryName
             """)
@@ -21,6 +22,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     @Query(value = """
            SELECT c.* FROM courses c
+           JOIN instructors i ON i.id = c.instructor_id
            JOIN categories cat ON c.category_id = cat.id
            WHERE cat.name = :categoryName
            """,
