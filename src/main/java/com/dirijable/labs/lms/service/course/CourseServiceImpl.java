@@ -52,7 +52,8 @@ public class CourseServiceImpl implements CourseService {
                 .orElseGet(() -> {
                     PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
                             courseRepository
-                                    .findByCategoryName(categoryName, pageable)
+                                    .findByCategoryNameNative(
+                                            categoryName, pageable)
                                     .map(courseMapper::toResponse)
                     );
                     coursePageCache.put(key, pageResponse);

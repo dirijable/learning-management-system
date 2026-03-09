@@ -20,6 +20,7 @@ public class CoursePageCache implements InMemoryCache<PageResponse<CourseRespons
     }
 
     @Override
+
     public void put(CacheKey key, PageResponse<CourseResponseDto> value) {
         cache.put(key, value);
     }
