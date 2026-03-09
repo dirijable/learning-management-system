@@ -45,7 +45,6 @@ public class CourseServiceImpl implements CourseService {
     private static final String COURSE_ID_NOT_FOUND = "course with id = '%d' not found";
     private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
 
-
     @Override
     public PageResponse<CourseResponseDto> findByCategoryName(String categoryName, Pageable pageable) {
         CacheKey key = GenericCacheKey.of(List.of(categoryName, pageable.getPageNumber(), pageable.getPageSize()));
@@ -143,7 +142,6 @@ public class CourseServiceImpl implements CourseService {
         course.addUser(user);
         courseRepository.save(course);
     }
-
 
     @Override
     @Transactional(readOnly = true)
