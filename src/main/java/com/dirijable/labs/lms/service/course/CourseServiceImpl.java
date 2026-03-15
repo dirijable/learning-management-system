@@ -52,7 +52,7 @@ public class CourseServiceImpl implements CourseService {
                 .orElseGet(() -> {
                     PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
                             courseRepository
-                                    .findByCategoryNameNative(
+                                    .findByCategoryName(
                                             categoryName, pageable)
                                     .map(courseMapper::toResponse)
                     );

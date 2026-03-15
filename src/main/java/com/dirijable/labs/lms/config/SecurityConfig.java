@@ -36,7 +36,14 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/users/registration").permitAll()
+                        .requestMatchers(
+                                "/auth/**",
+                                "/users/registration",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/swagger-ui.html",
+                                "/swagger/openapi.yaml"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();

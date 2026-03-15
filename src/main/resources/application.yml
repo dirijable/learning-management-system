@@ -6,11 +6,6 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5433/lms_db
-#    username: postgres
-#    password: postgres
   jpa:
     show-sql: true
     properties:
@@ -20,18 +15,31 @@ spring:
     hibernate:
       ddl-auto: validate
 logging:
+  file:
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: "logs/archived/app.%d{yyyy-MM-dd}.%i.log.gz"
+      max-file-size: 10MB
+      max-history: 30
+      total-size-cap: 1GB
+      clean-history-on-start: false
+  pattern:
+     file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
   level:
-    org:
-      springframework:
-        security: debug
+    root: INFO
+    com.dirijable.labs.lms: DEBUG
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    url: /swagger/openapi.yaml
+  api-docs:
+    path: /v3/api-docs
 jwt:
   secret-key: ${JWT_SECRET}
   access-token-expiration: ${JWT_ACCESS_EXPIRATION}
   refresh-token-expiration: ${JWT_REFRESH_EXPIRATION}
-#  secret-key: 452f6f4d306b66314f346b7a69514e4b506b325254336c584a5647504369426d
-#  access-token-expiration: 259200000
-#  refresh-token-expiration: 259200000
-
 server:
   port: 8080
   servlet:

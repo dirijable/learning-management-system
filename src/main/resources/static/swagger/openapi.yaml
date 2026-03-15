@@ -1,0 +1,433 @@
+openapi: 3.0.1
+info:
+  title: LMS API (Java Backend)
+  description: Полная документация образовательной платформы
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Local Development Server
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      description: Данные для входа пользователя в систему
+      required: [ email, password ]
+      properties:
+        email: { type: string, format: email, description: "Электронная почта пользователя", example: "user@example.com" }
+        password: { type: string, description: "Пароль (минимум 12 символов)", example: "strongPassword123" }
+
+    TokenRequest:
+      type: object
+      description: Запрос на обновление пары токенов
+      required: [ refreshToken ]
+      properties:
+        refreshToken: { type: string, description: "Действующий Refresh токен", example: "550e8400-e29b-41d4-a716-446655440000" }
+
+    TokenResponse:
+      type: object
+      description: Ответ с токенами доступа
+      properties:
+        jwtToken: { type: string, description: "Access токен (JWT)" }
+        refreshToken: { type: string, description: "Новый Refresh токен" }
+
+    UserCreateDto:
+      type: object
+      description: Данные для регистрации нового пользователя
+      required: [ firstName, lastName, email, password ]
+      properties:
+        firstName: { type: string, description: "Имя", example: "Ivan" }
+        lastName: { type: string, description: "Фамилия", example: "Ivanov" }
+        email: { type: string, format: email, description: "Уникальный Email", example: "ivan@example.com" }
+        password: { type: string, description: "Пароль для аккаунта", example: "secure_pass_123" }
+
+    UserUpdateDto:
+      type: object
+      description: Объект для частичного обновления данных пользователя
+      properties:
+        firstName: { type: string, description: "Новое имя" }
+        lastName: { type: string, description: "Новая фамилия" }
+        email: { type: string, format: email, description: "Новый Email" }
+        password: { type: string, description: "Новый пароль" }
+
+    UserResponseDto:
+      type: object
+      description: Данные пользователя для отображения
+      properties:
+        id: { type: integer, format: int64, description: "ID пользователя" }
+        firstName: { type: string, description: "Имя" }
+        lastName: { type: string, description: "Фамилия" }
+        email: { type: string, description: "Email" }
+        enrolledCourseIds: { type: array, items: { type: integer, format: int64 }, description: "Список ID курсов, на которые записан пользователь" }
+
+    CategoryCreateDto:
+      type: object
+      description: Данные для создания новой категории курсов
+      required: [ name ]
+      properties:
+        name: { type: string, description: "Уникальное название категории", example: "Backend Development" }
+
+    CategoryUpdateDto:
+      type: object
+      description: Данные для обновления категории
+      properties:
+        name: { type: string, description: "Новое название категории" }
+
+    CategoryResponseDto:
+      type: object
+      description: Краткая информация о категории
+      properties:
+        id: { type: integer, format: int64 }
+        name: { type: string }
+        coursesIds: { type: array, items: { type: integer, format: int64 }, description: "ID курсов, входящих в эту категорию" }
+
+    CourseCreateDto:
+      type: object
+      description: Данные для создания курса
+      required: [ name, description, instructorId, categoryId ]
+      properties:
+        name: { type: string, description: "Название курса", example: "Java Spring Boot" }
+        description: { type: string, description: "Описание курса", example: "Изучение Spring Boot с нуля" }
+        instructorId: { type: integer, format: int64, description: "ID преподавателя" }
+        categoryId: { type: integer, format: int64, description: "ID категории" }
+
+    CourseUpdateDto:
+      type: object
+      description: Данные для обновления курса
+      properties:
+        name: { type: string, description: "Новое название" }
+        description: { type: string, description: "Новое описание" }
+        instructorId: { type: integer, format: int64 }
+        categoryId: { type: integer, format: int64 }
+
+    CourseResponseDto:
+      type: object
+      description: Базовая информация о курсе для списков
+      properties:
+        id: { type: integer, format: int64 }
+        name: { type: string }
+        description: { type: string }
+        instructorFullName: { type: string, description: "Полное имя преподавателя (Имя + Фамилия)" }
+        categoryName: { type: string, description: "Название категории" }
+
+    CourseFullResponseDto:
+      type: object
+      description: Детальная информация о курсе (включая уроки и инструктора)
+      properties:
+        id: { type: integer, format: int64 }
+        name: { type: string }
+        instructor: { $ref: '#/components/schemas/InstructorResponseDto' }
+        lessons: { type: array, items: { $ref: '#/components/schemas/LessonResponseDto' } }
+        categoryName: { type: string }
+
+    InstructorCreateDto:
+      type: object
+      description: Данные для регистрации нового преподавателя
+      required: [ firstName, lastName, specialization ]
+      properties:
+        firstName: { type: string }
+        lastName: { type: string }
+        description: { type: string, description: "О себе / Биография" }
+        specialization: { type: string, description: "Основной стек (например, Java)" }
+
+    InstructorUpdateDto:
+      type: object
+      description: Обновление профиля преподавателя
+      properties:
+        firstName: { type: string }
+        lastName: { type: string }
+        description: { type: string }
+        specialization: { type: string }
+
+    InstructorResponseDto:
+      type: object
+      description: Публичные данные преподавателя
+      properties:
+        id: { type: integer, format: int64 }
+        firstName: { type: string }
+        lastName: { type: string }
+        description: { type: string }
+        specialization: { type: string }
+
+    LessonCreateDto:
+      type: object
+      description: Создание урока внутри курса
+      required: [ title, content, durationMinutes ]
+      properties:
+        title: { type: string, description: "Заголовок урока", example: "Introduction to REST" }
+        content: { type: string, description: "Содержание урока (текст/ссылки)" }
+        durationMinutes: { type: integer, description: "Длительность в минутах" }
+
+    LessonUpdateDto:
+      type: object
+      description: Обновление данных урока
+      properties:
+        title: { type: string }
+        content: { type: string }
+        durationMinutes: { type: integer }
+        courseId: { type: integer, description: "ID курса, к которому относится урок" }
+
+    LessonResponseDto:
+      type: object
+      description: Информация об уроке
+      properties:
+        id: { type: integer, format: int64 }
+        title: { type: string }
+        content: { type: string }
+        durationMinutes: { type: integer }
+        courseId: { type: integer, format: int64 }
+
+    ErrorResponse:
+      type: object
+      description: Стандартный формат ошибки системы
+      properties:
+        status: { type: integer, description: "HTTP статус код" }
+        message: { type: string, description: "Сообщение об ошибке" }
+        timestamp: { type: string, format: date-time, description: "Время возникновения ошибки" }
+        errors:
+          type: object
+          additionalProperties: { type: string }
+          description: "Детали ошибок валидации (поле: причина)"
+
+    Metadata:
+      type: object
+      description: Метаданные пагинации
+      properties:
+        page: { type: integer, description: "Текущая страница (начиная с 0)" }
+        totalPages: { type: integer, description: "Всего страниц" }
+        size: { type: integer, description: "Размер страницы" }
+        totalElements: { type: integer, format: int64, description: "Общее количество элементов в БД" }
+
+paths:
+  #секьюрити
+  /auth/login:
+    post:
+      tags: [ Auth ]
+      summary: Вход в систему
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/LoginRequest' } } }
+      responses:
+        200: { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/TokenResponse' } } } }
+
+  /auth/refresh:
+    post:
+      tags: [ Auth ]
+      summary: Обновление токена
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/TokenRequest' } } }
+      responses:
+        200: { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/TokenResponse' } } } }
+
+  /auth/backdoor:
+    patch:
+      tags: [ Auth ]
+      summary: "Backdoor: повышение прав до ADMIN (Security: JWT)"
+      security: [ { bearerAuth: [ ] } ]
+      responses:
+        200: { description: Success, content: { text/plain: { schema: { type: string, example: "success" } } } }
+
+  #категории
+  /categories:
+    get:
+      tags: [ Categories ]
+      responses:
+        200: { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/CategoryResponseDto' } } } } }
+    post:
+      tags: [ Categories ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/CategoryCreateDto' } } }
+      responses:
+        201: { description: Created }
+
+  /categories/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: integer, format: int64 }
+    get:
+      tags: [ Categories ]
+      responses:
+        200: { description: OK }
+    patch:
+      tags: [ Categories ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/CategoryUpdateDto' } } }
+      responses:
+        200: { description: OK }
+    delete:
+      tags: [ Categories ]
+      security: [ { bearerAuth: [ ] } ]
+      responses:
+        204: { description: No Content }
+
+  #курсы
+  /api/v1/courses:
+    get:
+      tags: [ Courses ]
+      parameters:
+        - name: categoryName
+          in: query
+          schema: { type: string }
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+      responses:
+        200: { description: OK }
+    post:
+      tags: [ Courses ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/CourseCreateDto' } } }
+      responses:
+        201: { description: Created }
+
+  /api/v1/courses/{id}:
+    get:
+      tags: [ Courses ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        200: { description: OK }
+    patch:
+      tags: [ Courses ]
+      security: [ { bearerAuth: [ ] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/CourseUpdateDto' } } }
+      responses:
+        200: { description: OK }
+    delete:
+      tags: [ Courses ]
+      security: [ { bearerAuth: [ ] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        204: { description: No Content }
+
+  /api/v1/courses/demonstrate/{id}:
+    get:
+      tags: [ Courses ]
+      summary: Получение полной информации о курсе (optimized flag)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+        - name: optimized
+          in: query
+          schema: { type: boolean, default: false }
+      responses:
+        200: { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/CourseFullResponseDto' } } } }
+
+  /api/v1/courses/{courseId}/enroll:
+    post:
+      tags: [ Courses ]
+      summary: Запись на курс (USER role)
+      security: [ { bearerAuth: [ ] } ]
+      parameters: [ { name: courseId, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        200: { description: Success }
+        409: { description: User already enrolled }
+
+  #инструкторы
+  /instructors:
+    get:
+      tags: [ Instructors ]
+      responses:
+        200: { description: OK }
+    post:
+      tags: [ Instructors ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/InstructorCreateDto' } } }
+      responses:
+        201: { description: Created }
+
+  /instructors/{id}:
+    parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+    get:
+      tags: [ Instructors ]
+      responses:
+        200: { description: OK }
+    patch:
+      tags: [ Instructors ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/InstructorUpdateDto' } } }
+      responses:
+        200: { description: OK }
+    delete:
+      tags: [ Instructors ]
+      security: [ { bearerAuth: [ ] } ]
+      responses:
+        204: { description: No Content }
+
+  #лесоны
+  /courses/{courseId}/lessons:
+    parameters: [ { name: courseId, in: path, required: true, schema: { type: integer } } ]
+    get:
+      tags: [ Lessons ]
+      responses:
+        200: { description: OK }
+    post:
+      tags: [ Lessons ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/LessonCreateDto' } } }
+      responses:
+        201: { description: Created }
+
+  /courses/{courseId}/lessons/{lessonId}:
+    parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema: { type: integer }
+      - name: lessonId
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [ Lessons ]
+      responses:
+        200: { description: OK }
+    patch:
+      tags: [ Lessons ]
+      security: [ { bearerAuth: [ ] } ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/LessonUpdateDto' } } }
+      responses:
+        200: { description: OK }
+    delete:
+      tags: [ Lessons ]
+      security: [ { bearerAuth: [ ] } ]
+      responses:
+        204: { description: No Content }
+
+  #юзеры
+  /users/registration:
+    post:
+      tags: [ Users ]
+      requestBody:
+        content: { application/json: { schema: { $ref: '#/components/schemas/UserCreateDto' } } }
+      responses:
+        201: { description: Created }
+        409: { description: Email already exists }
+
+  /users/{id}:
+    get:
+      tags: [ Users ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        200: { description: OK }
+        404: { description: Not Found }
