@@ -26,6 +26,37 @@ public class LessonServiceImpl implements LessonService {
     private final CourseRepository courseRepository;
     private final LessonMapper lessonMapper;
 
+    @Transactional
+    public List<LessonResponseDto> bulkSaveTrx(List<LessonCreateDto> createDtos, Long courseId) {
+        return bulkInternal(createDtos, courseId);
+    }
+
+    public List<LessonResponseDto> bulkSaveNoTrx(List<LessonCreateDto> createDtos, Long courseId) {
+        return bulkInternal(createDtos, courseId);
+    }
+
+    private List<LessonResponseDto> bulkInternal(List<LessonCreateDto> createDtos, Long courseId) {
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException("Course with id = '%d' not found".formatted(courseId)));
+        return createDtos.stream()
+                .map(dto -> existByTitleAndCourseId(dto, course.getId()))
+                .map(dto -> {
+                    Lesson entity = lessonMapper.toEntity(dto);
+                    entity.setCourse(course);
+                    return entity;
+                })
+                .map(lessonRepository::save)
+                .map(lessonMapper::toResponse)
+                .toList();
+    }
+
+    private LessonCreateDto existByTitleAndCourseId(LessonCreateDto createDto, Long courseId) {
+        if (lessonRepository.existsByTitleAndCourseId(createDto.title(), courseId)) {
+            throw new LessonAlreadyExistException("lesson with title = '%s' already exists".formatted(createDto.title()));
+        }
+        return createDto;
+    }
+
     @Override
     public LessonResponseDto findById(Long id) {
         return lessonRepository.findById(id)

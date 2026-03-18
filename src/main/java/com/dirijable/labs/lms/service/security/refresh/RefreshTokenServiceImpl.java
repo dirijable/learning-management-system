@@ -15,7 +15,6 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class RefreshTokenServiceImpl implements RefreshTokenService {
 
     @Value("${jwt.refresh-token-expiration}")

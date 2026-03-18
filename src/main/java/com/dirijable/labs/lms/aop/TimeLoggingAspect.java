@@ -23,7 +23,7 @@ public class TimeLoggingAspect {
             return joinPoint.proceed();
         } finally {
             long endTime = System.currentTimeMillis();
-            log.debug("Time taken [{}]: {} ms",
+            log.debug("time of method work [{}]: {} ms",
                     joinPoint.getSignature().toShortString(), (endTime - startTime));
         }
     }

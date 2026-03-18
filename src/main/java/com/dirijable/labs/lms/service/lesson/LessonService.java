@@ -7,6 +7,11 @@ import com.dirijable.labs.lms.dto.lesson.LessonUpdateDto;
 import java.util.List;
 
 public interface LessonService {
+
+    List<LessonResponseDto> bulkSaveTrx(List<LessonCreateDto> createDtos, Long courseId);
+
+    List<LessonResponseDto> bulkSaveNoTrx(List<LessonCreateDto> createDtos, Long courseId);
+
     LessonResponseDto findById(Long id);
 
     List<LessonResponseDto> findAllByCourseId(Long courseId);
