@@ -2,6 +2,7 @@ package com.dirijable.labs.lms.exception.handler;
 
 import com.dirijable.labs.lms.dto.error.ErrorResponse;
 import com.dirijable.labs.lms.exception.base.LmsException;
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
@@ -17,6 +18,7 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@NullMarked
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
