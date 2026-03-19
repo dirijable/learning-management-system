@@ -24,9 +24,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                            HttpHeaders headers,
-                                                                            HttpStatusCode status,
-                                                                            WebRequest request
+                                                                  HttpHeaders headers,
+                                                                  HttpStatusCode status,
+                                                                  WebRequest request
     ) {
         Map<String, String> errors = ex.getFieldErrors()
                 .stream()
@@ -41,6 +41,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(LmsException.class)
     public ResponseEntity<Object> handleLmsException(LmsException ex) {
         return buildErrorResponse(ex.getStatus().value(), ex.getMessage(), null);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> handleAllUncaughtException(Exception ex) {
+        return buildErrorResponse(500, "Internal Server Error", Map.of("error: ", ex.getMessage()));
     }
 
     private ResponseEntity<Object> buildErrorResponse(Integer status, String message, Map<String, String> errors) {
