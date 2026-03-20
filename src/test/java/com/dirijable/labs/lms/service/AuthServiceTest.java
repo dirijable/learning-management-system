@@ -108,9 +108,9 @@ class AuthServiceTest {
     void refreshAccessToken_ExpiredToken_ThrowsException() {
         when(refreshTokenService.verifyExpiration(anyString()))
                 .thenThrow(new InvalidTokenException("Token expired"));
-
+        TokenRequest tokenRequest = new TokenRequest("expired-token");
         assertThrows(InvalidTokenException.class, () ->
-                authService.refreshAccessToken(new TokenRequest("expired-token")));
+                authService.refreshAccessToken(tokenRequest));
     }
 
     @Test

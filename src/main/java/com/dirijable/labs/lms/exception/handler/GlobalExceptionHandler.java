@@ -2,31 +2,22 @@ package com.dirijable.labs.lms.exception.handler;
 
 import com.dirijable.labs.lms.dto.error.ErrorResponse;
 import com.dirijable.labs.lms.exception.base.LmsException;
-import org.jspecify.annotations.NullMarked;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.time.Instant;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@NullMarked
 @RestControllerAdvice
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler  {
 
-    @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                  HttpHeaders headers,
-                                                                  HttpStatusCode status,
-                                                                  WebRequest request
-    ) {
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         Map<String, String> errors = ex.getFieldErrors()
                 .stream()
                 .collect(Collectors.toMap(
@@ -34,7 +25,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                         error -> error.getDefaultMessage() == null ? "Invalid value" : error.getDefaultMessage(),
                         (oldValue, newValue) -> oldValue + "; " + newValue
                 ));
-        return buildErrorResponse(status.value(), "Validation error", errors);
+        return buildErrorResponse(HttpStatus.BAD_REQUEST.value(), "Validation error", errors);
     }
 
     @ExceptionHandler(LmsException.class)
