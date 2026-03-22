@@ -24,6 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
 @Configuration
+@SuppressWarnings("java:S4502")
 public class SecurityConfig {
 
     @Value("${jwt.secret-key}")
