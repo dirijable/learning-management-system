@@ -1,32 +1,32 @@
-2026-03-19 13:43:25.946 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 12284 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
-2026-03-19 13:43:25.960 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
-2026-03-19 13:43:26.104 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-03-19 13:43:26.105 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-03-19 13:43:28.972 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-19 13:43:29.282 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 282 ms. Found 6 JPA repository interfaces.
-2026-03-19 13:43:31.642 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-03-19 13:43:31.690 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-03-19 13:43:31.691 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-19 13:43:31.852 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 5745 ms
-2026-03-19 13:43:32.303 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-03-19 13:43:32.667 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b6f1b82
-2026-03-19 13:43:32.672 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-03-19 13:43:33.104 [restartedMain] INFO  liquibase.database - Set default schema name to public
-2026-03-19 13:43:33.832 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:43:34.151 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
-2026-03-19 13:43:34.157 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:43:34.184 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
-2026-03-19 13:43:34.185 [restartedMain] INFO  liquibase.util - Run:                          0
-2026-03-19 13:43:34.185 [restartedMain] INFO  liquibase.util - Previously run:              11
-2026-03-19 13:43:34.185 [restartedMain] INFO  liquibase.util - Filtered out:                 0
-2026-03-19 13:43:34.185 [restartedMain] INFO  liquibase.util - -------------------------------
-2026-03-19 13:43:34.185 [restartedMain] INFO  liquibase.util - Total change sets:           11
-2026-03-19 13:43:34.187 [restartedMain] INFO  liquibase.util - Update summary generated
-2026-03-19 13:43:34.189 [restartedMain] INFO  liquibase.command - Command execution complete
-2026-03-19 13:43:34.750 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-03-19 13:43:34.984 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-03-19 13:43:36.941 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-19 13:43:37.172 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-03-22 13:58:47.326 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 18664 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 13:58:47.333 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 13:58:47.388 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 13:58:47.388 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 13:58:48.870 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 13:58:48.973 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2026-03-22 13:58:50.090 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 13:58:50.109 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 13:58:50.110 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 13:58:50.170 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2781 ms
+2026-03-22 13:58:50.394 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 13:58:50.571 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7755357f
+2026-03-22 13:58:50.574 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 13:58:50.765 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 13:58:51.106 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 13:58:51.264 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 13:58:51.267 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 13:58:51.281 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 13:58:51.283 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 13:58:51.284 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 13:58:51.952 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 13:58:52.034 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-22 13:58:52.637 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 13:58:52.749 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -38,51 +38,61 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-03-19 13:43:39.736 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-19 13:43:39.874 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 13:43:40.324 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-03-19 13:43:42.663 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2026-03-19 13:43:43.676 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-19 13:43:47.269 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-03-19 13:43:47.284 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 22.665 seconds (process running for 24.604)
-2026-03-19 13:43:47.291 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-03-19 13:43:47.292 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-03-19 13:47:03.251 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-19 13:47:03.251 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-03-19 13:47:03.256 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2026-03-19 13:47:04.202 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.dirijable.labs.lms.dto.course.CourseResponseDto> com.dirijable.labs.lms.controller.CourseRestController.save(com.dirijable.labs.lms.dto.course.CourseCreateDto) with 3 errors: [Field error in object 'courseCreateDto' on field 'description': rejected value []; codes [Size.courseCreateDto.description,Size.description,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseCreateDto.description,description]; arguments []; default message [description],512,1]; default message [размер должен находиться в диапазоне от 1 до 512]] [Field error in object 'courseCreateDto' on field 'name': rejected value [null]; codes [NotBlank.courseCreateDto.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseCreateDto.name,name]; arguments []; default message [name]]; default message [не должно быть пустым]] [Field error in object 'courseCreateDto' on field 'description': rejected value []; codes [NotBlank.courseCreateDto.description,NotBlank.description,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [co ]
-urseCreateDto.description,description]; arguments []; default message [description]]; default message [не должно быть пустым]]2026-03-19 13:52:24.889 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
-2026-03-19 13:52:24.901 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-19 13:52:24.917 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-03-19 13:52:24.953 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 13:52:24.961 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-03-19 13:52:24.978 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-03-19 13:52:25.206 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 12284 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
-2026-03-19 13:52:25.207 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
-2026-03-19 13:52:26.205 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-19 13:52:26.315 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
-2026-03-19 13:52:26.728 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-03-19 13:52:26.731 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-03-19 13:52:26.732 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-19 13:52:26.794 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1580 ms
-2026-03-19 13:52:26.956 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
-2026-03-19 13:52:27.022 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4fefecb1
-2026-03-19 13:52:27.023 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
-2026-03-19 13:52:27.056 [restartedMain] INFO  liquibase.database - Set default schema name to public
-2026-03-19 13:52:27.199 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:52:27.355 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
-2026-03-19 13:52:27.358 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:52:27.370 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
-2026-03-19 13:52:27.371 [restartedMain] INFO  liquibase.util - Run:                          0
-2026-03-19 13:52:27.371 [restartedMain] INFO  liquibase.util - Previously run:              11
-2026-03-19 13:52:27.371 [restartedMain] INFO  liquibase.util - Filtered out:                 0
-2026-03-19 13:52:27.372 [restartedMain] INFO  liquibase.util - -------------------------------
-2026-03-19 13:52:27.372 [restartedMain] INFO  liquibase.util - Total change sets:           11
-2026-03-19 13:52:27.372 [restartedMain] INFO  liquibase.util - Update summary generated
-2026-03-19 13:52:27.372 [restartedMain] INFO  liquibase.command - Command execution complete
-2026-03-19 13:52:27.488 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-03-19 13:52:27.594 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-19 13:52:27.610 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-03-22 13:58:53.978 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 13:58:54.040 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 13:58:54.246 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 13:58:54.983 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 13:58:55.335 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 13:58:56.349 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-03-22 13:58:56.353 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 13:58:56.356 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 13:58:56.361 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 13:58:56.376 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 13:58:56.395 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-22 13:59:36.199 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 22156 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 13:59:36.202 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 13:59:36.250 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 13:59:36.251 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 13:59:37.264 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 13:59:37.355 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 6 JPA repository interfaces.
+2026-03-22 13:59:38.102 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 13:59:38.116 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 13:59:38.116 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 13:59:38.163 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1912 ms
+2026-03-22 13:59:38.343 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 13:59:38.494 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@75ca11ee
+2026-03-22 13:59:38.496 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 13:59:38.663 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 13:59:38.932 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 13:59:39.056 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 13:59:39.059 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 13:59:39.073 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 13:59:39.074 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 13:59:39.074 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 13:59:39.074 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 13:59:39.074 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 13:59:39.074 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 13:59:39.075 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 13:59:39.077 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 13:59:39.971 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 13:59:40.028 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-22 13:59:40.581 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 13:59:40.683 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -94,47 +104,64 @@ urseCreateDto.description,description]; arguments []; default message [descripti
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-03-19 13:52:27.895 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-19 13:52:27.941 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 13:52:28.343 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2026-03-19 13:52:28.852 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-19 13:52:30.048 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-03-19 13:52:30.054 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 4.935 seconds (process running for 547.374)
-2026-03-19 13:52:30.056 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-03-19 13:52:30.057 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-03-19 13:52:30.059 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2026-03-19 13:52:31.376 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2026-03-19 13:52:31.379 [Thread-5] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-19 13:52:31.385 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-03-19 13:52:31.393 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 13:52:31.394 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
-2026-03-19 13:52:31.422 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
-2026-03-19 13:52:31.643 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 12284 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
-2026-03-19 13:52:31.644 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
-2026-03-19 13:52:32.560 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-19 13:52:32.627 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 6 JPA repository interfaces.
-2026-03-19 13:52:32.898 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-03-19 13:52:32.899 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-03-19 13:52:32.900 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-19 13:52:32.983 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1335 ms
-2026-03-19 13:52:33.080 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
-2026-03-19 13:52:33.132 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@5b925e13
-2026-03-19 13:52:33.133 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
-2026-03-19 13:52:33.164 [restartedMain] INFO  liquibase.database - Set default schema name to public
-2026-03-19 13:52:33.271 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:52:33.414 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
-2026-03-19 13:52:33.417 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
-2026-03-19 13:52:33.429 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
-2026-03-19 13:52:33.429 [restartedMain] INFO  liquibase.util - Run:                          0
-2026-03-19 13:52:33.429 [restartedMain] INFO  liquibase.util - Previously run:              11
-2026-03-19 13:52:33.430 [restartedMain] INFO  liquibase.util - Filtered out:                 0
-2026-03-19 13:52:33.430 [restartedMain] INFO  liquibase.util - -------------------------------
-2026-03-19 13:52:33.430 [restartedMain] INFO  liquibase.util - Total change sets:           11
-2026-03-19 13:52:33.430 [restartedMain] INFO  liquibase.util - Update summary generated
-2026-03-19 13:52:33.430 [restartedMain] INFO  liquibase.command - Command execution complete
-2026-03-19 13:52:33.503 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-03-19 13:52:33.588 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-19 13:52:33.608 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-03-22 13:59:41.849 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 13:59:41.910 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 13:59:42.109 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 13:59:42.760 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 13:59:43.104 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 13:59:44.082 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 13:59:44.090 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 8.355 seconds (process running for 9.184)
+2026-03-22 13:59:44.094 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-22 13:59:44.095 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-22 14:07:39.027 [http-nio-8080-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 14:07:39.027 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 14:07:39.029 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-22 14:07:39.481 [http-nio-8080-exec-5] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [UserDetailsServiceImpl.loadUserByUsername(..)]: 159 ms
+2026-03-22 14:07:39.798 [http-nio-8080-exec-5] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [RefreshTokenServiceImpl.createRefreshToken(..)]: 83 ms
+2026-03-22 14:07:39.798 [http-nio-8080-exec-5] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [AuthServiceImpl.login(..)]: 558 ms
+2026-03-22 14:07:50.498 [http-nio-8080-exec-10] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 28 ms
+2026-03-22 14:08:46.741 [http-nio-8080-exec-4] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [CourseServiceImpl.save(..)]: 42 ms
+2026-03-22 14:09:04.779 [http-nio-8080-exec-6] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 5 ms
+2026-03-22 14:11:14.446 [http-nio-8080-exec-8] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.bulkSaveTrx(..)]: 29 ms
+2026-03-22 14:11:14.461 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.dirijable.labs.lms.exception.business.conflict.LessonAlreadyExistException: lesson with title = 'lesson 1' already exists]
+2026-03-22 14:13:54.307 [http-nio-8080-exec-1] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 5 ms
+2026-03-22 14:16:09.183 [http-nio-8080-exec-4] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.bulkSaveNoTrx(..)]: 29 ms
+2026-03-22 14:16:09.185 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.dirijable.labs.lms.exception.business.conflict.LessonAlreadyExistException: lesson with title = 'lesson 1' already exists]
+2026-03-22 14:16:18.589 [http-nio-8080-exec-6] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 6 ms
+2026-03-22 14:51:45.871 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 14:51:45.886 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 14:51:45.902 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 14:51:45.916 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 14:51:45.923 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 15:05:20.019 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:05:20.024 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:05:20.126 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 15:05:20.127 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 15:05:22.054 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:05:22.219 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 147 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:05:23.932 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:05:23.964 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:05:23.964 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:05:24.123 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3995 ms
+2026-03-22 15:05:24.472 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 15:05:24.772 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e10250e
+2026-03-22 15:05:24.775 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 15:05:25.222 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:05:25.814 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:05:26.044 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:05:26.048 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:05:26.074 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:05:26.074 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:05:26.075 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:05:26.075 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:05:26.075 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:05:26.075 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:05:26.077 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:05:26.079 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:05:27.246 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:05:27.432 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-22 15:05:28.678 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:05:28.872 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -146,17 +173,580 @@ urseCreateDto.description,description]; arguments []; default message [descripti
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-03-19 13:52:33.842 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-19 13:52:33.884 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 13:52:34.153 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2026-03-19 13:52:34.559 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-19 13:52:35.317 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-03-19 13:52:35.320 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 3.747 seconds (process running for 552.641)
-2026-03-19 13:52:35.322 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-03-19 13:52:35.322 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-03-19 13:52:35.324 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2026-03-19 14:11:51.445 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-19 14:11:51.453 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-03-19 14:11:51.460 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-19 14:11:51.463 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
-2026-03-19 14:11:51.481 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-03-22 15:05:31.186 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:05:31.317 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:05:31.697 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 15:05:33.050 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:05:33.826 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 15:05:35.724 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 15:05:35.739 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 16.666 seconds (process running for 18.107)
+2026-03-22 15:05:35.744 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-22 15:05:35.745 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-22 15:05:51.813 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 15:05:51.814 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 15:05:51.819 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-03-22 15:05:52.367 [http-nio-8080-exec-2] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [CourseServiceImpl.findByCategoryName(..)]: 284 ms
+2026-03-22 15:05:55.799 [http-nio-8080-exec-6] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [CourseServiceImpl.findByCategoryName(..)]: 0 ms
+2026-03-22 15:05:59.468 [http-nio-8080-exec-4] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [CourseServiceImpl.findByCategoryName(..)]: 0 ms
+2026-03-22 15:06:09.936 [http-nio-8080-exec-5] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 80 ms
+2026-03-22 15:06:11.861 [http-nio-8080-exec-3] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 0 ms
+2026-03-22 15:06:13.761 [http-nio-8080-exec-7] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 0 ms
+2026-03-22 15:16:41.956 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m47s69ms737µs700ns).
+2026-03-22 15:21:11.632 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)
+2026-03-22 15:21:11.642 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 15:21:11.652 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 15:21:11.665 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:21:11.673 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 15:21:11.688 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-22 15:21:11.917 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:21:11.918 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:21:12.743 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:21:12.840 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:21:13.395 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:21:13.425 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:21:13.425 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:21:13.600 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1677 ms
+2026-03-22 15:21:13.828 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-03-22 15:21:13.957 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@37fd2286
+2026-03-22 15:21:13.957 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-03-22 15:21:14.140 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:21:14.333 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:21:14.543 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:21:14.547 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:21:14.562 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:21:14.562 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:21:14.563 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:21:14.563 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:21:14.563 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:21:14.563 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:21:14.563 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:21:14.564 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:21:14.653 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:21:14.770 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:21:14.788 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:21:15.109 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:21:15.153 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:21:15.656 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:21:15.787 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:21:15.788 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:21:15.789 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-03-22 15:21:15.800 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-03-22 15:21:15.802 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:21:15.813 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:21:15.892 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:21:17.459 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:21:17.460 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:21:18.112 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:21:18.185 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:21:18.531 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:21:18.533 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:21:18.534 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:21:18.643 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1177 ms
+2026-03-22 15:21:18.755 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-03-22 15:21:18.810 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@78392ff0
+2026-03-22 15:21:18.811 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-03-22 15:21:18.844 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:21:18.970 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:21:19.114 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:21:19.125 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:21:19.141 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:21:19.142 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:21:19.223 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:21:19.308 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:21:19.323 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:21:19.577 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:21:19.623 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:21:19.913 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:21:20.499 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 15:21:21.548 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 15:21:21.553 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 4.16 seconds (process running for 963.921)
+2026-03-22 15:21:21.555 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-22 15:21:21.555 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-22 15:21:21.557 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-03-22 15:23:50.924 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)
+2026-03-22 15:23:50.926 [Thread-5] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 15:23:50.934 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 15:23:50.941 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:23:50.943 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-03-22 15:23:50.952 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-03-22 15:23:51.151 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:23:51.151 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:23:51.966 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:23:52.093 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:23:52.631 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:23:52.635 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:23:52.635 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:23:52.700 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1545 ms
+2026-03-22 15:23:52.997 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-03-22 15:23:53.073 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@52e28b67
+2026-03-22 15:23:53.074 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-03-22 15:23:53.119 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:23:53.423 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:23:53.618 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:23:53.621 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:23:53.672 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:23:53.673 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:23:53.674 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:23:53.951 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:23:54.104 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:23:54.128 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:23:54.424 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:23:54.466 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:23:54.782 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:23:54.891 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:23:54.892 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:23:54.893 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-03-22 15:23:54.897 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-03-22 15:23:54.898 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:23:54.911 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:23:54.925 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:24:14.331 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:24:14.332 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:24:15.005 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:24:15.100 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:24:15.526 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:24:15.527 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:24:15.528 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:24:15.586 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1252 ms
+2026-03-22 15:24:15.760 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-03-22 15:24:15.843 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@df5e730
+2026-03-22 15:24:15.843 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-03-22 15:24:15.911 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:24:16.122 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:24:16.809 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:24:16.813 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:24:16.836 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:24:16.837 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:24:16.838 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:24:16.960 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:24:17.069 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:24:17.090 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:24:17.417 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:24:17.473 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:24:17.856 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:24:17.970 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:24:17.970 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:24:17.971 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-03-22 15:24:17.975 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-03-22 15:24:17.986 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:24:17.995 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:24:18.008 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:25:23.425 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:25:23.426 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:25:24.344 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:25:24.464 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:25:24.947 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:25:24.951 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:25:24.952 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:25:25.138 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1709 ms
+2026-03-22 15:25:25.467 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-03-22 15:25:25.684 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@7bf2b2d2
+2026-03-22 15:25:25.686 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-03-22 15:25:25.730 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:25:25.899 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:26.099 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:25:26.104 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:25:26.131 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:25:26.132 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:25:26.132 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:25:26.237 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:25:26.325 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:25:26.343 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:25:26.560 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:25:26.604 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:26.897 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:25:26.990 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:25:26.991 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:26.991 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2026-03-22 15:25:27.002 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-03-22 15:25:27.004 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:25:27.015 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:25:27.038 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:25:35.992 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:25:35.992 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:25:37.060 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:25:37.174 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:25:37.794 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:25:37.796 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:25:37.796 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:25:37.892 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1896 ms
+2026-03-22 15:25:38.121 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-03-22 15:25:38.234 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@7233e253
+2026-03-22 15:25:38.235 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-03-22 15:25:38.272 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:25:38.404 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:38.570 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:25:38.573 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:38.591 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:25:38.591 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:25:38.592 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:25:38.677 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:25:38.776 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:25:38.791 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:25:39.011 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:25:39.056 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:39.380 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:25:39.489 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:25:39.489 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:39.490 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2026-03-22 15:25:39.497 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2026-03-22 15:25:39.498 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:25:39.509 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:25:39.520 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:25:55.828 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:25:55.828 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:25:56.604 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:25:56.708 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:25:57.061 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:25:57.061 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:25:57.062 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:25:57.111 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1274 ms
+2026-03-22 15:25:57.259 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2026-03-22 15:25:57.325 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@53490eb6
+2026-03-22 15:25:57.325 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2026-03-22 15:25:57.367 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:25:57.517 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:57.677 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:25:57.681 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:25:57.717 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:25:57.718 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:25:57.918 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:25:58.062 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:25:58.084 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:25:58.613 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:25:58.683 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:59.264 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:25:59.625 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:25:59.626 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:25:59.627 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2026-03-22 15:25:59.633 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2026-03-22 15:25:59.635 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:25:59.654 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:25:59.686 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:26:01.278 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 9360 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:26:01.278 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:26:02.012 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:26:02.091 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:26:02.393 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:26:02.394 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:26:02.394 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:26:02.484 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1201 ms
+2026-03-22 15:26:02.654 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2026-03-22 15:26:02.736 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@357338e
+2026-03-22 15:26:02.738 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2026-03-22 15:26:02.784 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:26:02.968 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:26:03.131 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:26:03.135 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:26:03.149 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:26:03.149 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:26:03.150 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:26:03.260 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:26:03.407 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:26:03.427 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:26:03.829 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:26:04.192 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:26:04.688 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:26:04.921 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseRestController' defined in file [C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main\com\dirijable\labs\lms\controller\CourseRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.dirijable.labs.lms.service.course.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-03-22 15:26:04.921 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:26:04.922 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2026-03-22 15:26:04.929 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2026-03-22 15:26:04.936 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-22 15:26:04.943 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-22 15:26:04.973 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dirijable.labs.lms.controller.CourseRestController required a bean of type 'com.dirijable.labs.lms.service.course.CourseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dirijable.labs.lms.service.course.CourseService' in your configuration.
+
+2026-03-22 15:27:55.892 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Starting LmsApplication using Java 25.0.1 with PID 4792 (C:\Users\user\Desktop\unic\java\learning-management-system\lms\build\classes\java\main started by user in C:\Users\user\Desktop\unic\java\learning-management-system\lms)
+2026-03-22 15:27:55.897 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-22 15:27:55.999 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-22 15:27:56.000 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-22 15:27:57.956 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22 15:27:58.154 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 177 ms. Found 6 JPA repository interfaces.
+2026-03-22 15:27:59.620 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-22 15:27:59.646 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-22 15:27:59.647 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-22 15:27:59.749 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3747 ms
+2026-03-22 15:28:00.111 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-22 15:28:00.489 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6edf5b93
+2026-03-22 15:28:00.493 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-22 15:28:00.842 [restartedMain] INFO  liquibase.database - Set default schema name to public
+2026-03-22 15:28:01.350 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:28:01.587 [restartedMain] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-03-22 15:28:01.592 [restartedMain] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-03-22 15:28:01.614 [restartedMain] INFO  liquibase.util - UPDATE SUMMARY
+2026-03-22 15:28:01.615 [restartedMain] INFO  liquibase.util - Run:                          0
+2026-03-22 15:28:01.615 [restartedMain] INFO  liquibase.util - Previously run:              11
+2026-03-22 15:28:01.615 [restartedMain] INFO  liquibase.util - Filtered out:                 0
+2026-03-22 15:28:01.615 [restartedMain] INFO  liquibase.util - -------------------------------
+2026-03-22 15:28:01.615 [restartedMain] INFO  liquibase.util - Total change sets:           11
+2026-03-22 15:28:01.618 [restartedMain] INFO  liquibase.util - Update summary generated
+2026-03-22 15:28:01.620 [restartedMain] INFO  liquibase.command - Command execution complete
+2026-03-22 15:28:02.694 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-22 15:28:02.813 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-22 15:28:03.945 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22 15:28:04.129 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/lms_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: lms_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22 15:28:06.504 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-22 15:28:06.621 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:28:07.075 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-22 15:28:08.821 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-22 15:28:09.576 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22 15:28:11.799 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-22 15:28:11.814 [restartedMain] INFO  c.dirijable.labs.lms.LmsApplication - Started LmsApplication in 16.965 seconds (process running for 18.451)
+2026-03-22 15:28:11.822 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-22 15:28:11.823 [restartedMain] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-22 15:28:17.603 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-22 15:28:17.604 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-22 15:28:17.606 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-22 15:28:18.134 [http-nio-8080-exec-2] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 284 ms
+2026-03-22 15:28:20.721 [http-nio-8080-exec-3] DEBUG c.d.labs.lms.aop.TimeLoggingAspect - time of method work [LessonServiceImpl.findAllByCourseId(..)]: 0 ms
+2026-03-22 15:28:25.180 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-22 15:28:25.191 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-22 15:28:25.204 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22 15:28:25.213 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-22 15:28:25.226 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

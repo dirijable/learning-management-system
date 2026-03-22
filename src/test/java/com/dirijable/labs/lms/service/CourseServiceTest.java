@@ -20,7 +20,7 @@ import com.dirijable.labs.lms.exception.business.notfound.CourseNotFoundExceptio
 import com.dirijable.labs.lms.exception.business.notfound.InstructorNotFoundException;
 import com.dirijable.labs.lms.exception.business.notfound.UserNotFoundException;
 import com.dirijable.labs.lms.mapper.CourseMapper;
-import com.dirijable.labs.lms.cache.CoursePageCache;
+import com.dirijable.labs.lms.cache.PageCache;
 import com.dirijable.labs.lms.service.course.CourseServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -54,12 +54,18 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class CourseServiceTest {
 
-    @Mock private CourseRepository courseRepository;
-    @Mock private CategoryRepository categoryRepository;
-    @Mock private InstructorRepository instructorRepository;
-    @Mock private UserRepository userRepository;
-    @Mock private CourseMapper courseMapper;
-    @Mock private CoursePageCache coursePageCache;
+    @Mock
+    private CourseRepository courseRepository;
+    @Mock
+    private CategoryRepository categoryRepository;
+    @Mock
+    private InstructorRepository instructorRepository;
+    @Mock
+    private UserRepository userRepository;
+    @Mock
+    private CourseMapper courseMapper;
+    @Mock
+    private PageCache<CourseResponseDto> pageCache;
 
     @InjectMocks
     private CourseServiceImpl courseService;
@@ -88,7 +94,7 @@ class CourseServiceTest {
         void findByCategoryName_CacheHit() {
             Pageable pageable = PageRequest.of(0, 10);
             PageResponse<CourseResponseDto> cached = PageResponse.of(new PageImpl<>(List.of(responseDto)));
-            when(coursePageCache.get(any())).thenReturn(Optional.of(cached));
+            when(pageCache.get(any())).thenReturn(Optional.of(cached));
 
             PageResponse<CourseResponseDto> result = courseService.findByCategoryName("Java", pageable);
 
@@ -99,27 +105,27 @@ class CourseServiceTest {
         @Test
         void findByCategoryName_CacheMiss() {
             Pageable pageable = PageRequest.of(0, 10);
-            when(coursePageCache.get(any())).thenReturn(Optional.empty());
+            when(pageCache.get(any())).thenReturn(Optional.empty());
             when(courseRepository.findByCategoryName(anyString(), eq(pageable))).thenReturn(new PageImpl<>(List.of(course)));
             when(courseMapper.toResponse(course)).thenReturn(responseDto);
 
             courseService.findByCategoryName("Java", pageable);
 
-            verify(coursePageCache).put(any(), any());
+            verify(pageCache).put(any(), any());
             verify(courseRepository).findByCategoryName("Java", pageable);
         }
 
         @Test
         void findAll_CacheMiss() {
             Pageable pageable = PageRequest.of(0, 10);
-            when(coursePageCache.get(any())).thenReturn(Optional.empty());
+            when(pageCache.get(any())).thenReturn(Optional.empty());
             when(courseRepository.findAllOptimized(pageable)).thenReturn(new PageImpl<>(List.of(course)));
             when(courseMapper.toResponse(any())).thenReturn(responseDto);
 
             courseService.findAll(pageable);
 
             verify(courseRepository).findAllOptimized(pageable);
-            verify(coursePageCache).put(any(), any());
+            verify(pageCache).put(any(), any());
         }
 
         @Test
@@ -163,7 +169,7 @@ class CourseServiceTest {
 
             courseService.save(dto);
 
-            verify(coursePageCache).invalidateCache();
+            verify(pageCache).invalidateCache();
             verify(courseRepository).save(course);
         }
 
@@ -195,7 +201,7 @@ class CourseServiceTest {
             courseService.update(dto, id);
 
             verify(courseMapper).updateEntity(dto, newCat, newInst, course);
-            verify(coursePageCache).invalidateCache();
+            verify(pageCache).invalidateCache();
         }
 
         @Test
@@ -224,7 +230,7 @@ class CourseServiceTest {
             when(courseRepository.findById(id)).thenReturn(Optional.of(course));
             courseService.deleteById(id);
             verify(courseRepository).delete(course);
-            verify(coursePageCache).invalidateCache();
+            verify(pageCache).invalidateCache();
         }
 
         @Test
