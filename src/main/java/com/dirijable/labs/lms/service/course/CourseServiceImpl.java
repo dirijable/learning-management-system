@@ -1,6 +1,6 @@
 package com.dirijable.labs.lms.service.course;
 
-import com.dirijable.labs.lms.cache.CoursePageCache;
+import com.dirijable.labs.lms.cache.PageCache;
 import com.dirijable.labs.lms.db.entity.Category;
 import com.dirijable.labs.lms.db.entity.Course;
 import com.dirijable.labs.lms.db.entity.Instructor;
@@ -39,22 +39,21 @@ public class CourseServiceImpl implements CourseService {
     private final InstructorRepository instructorRepository;
     private final UserRepository userRepository;
     private final CourseMapper courseMapper;
-    private final CoursePageCache coursePageCache;
+    private final PageCache<CourseResponseDto> pageCache;
     private static final String COURSE_ID_NOT_FOUND = "course with id = '%d' not found";
     private static final String CATEGORY_NOT_FOUND = "Category with id = '%d' not found";
 
     @Override
     public PageResponse<CourseResponseDto> findByCategoryName(String categoryName, Pageable pageable) {
         CacheKey key = GenericCacheKey.of(List.of(categoryName, pageable.getPageNumber(), pageable.getPageSize()));
-        return coursePageCache.get(key)
+        return pageCache.get(key)
                 .orElseGet(() -> {
                     PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
                             courseRepository
-                                    .findByCategoryName(
-                                            categoryName, pageable)
+                                    .findByCategoryName(categoryName, pageable)
                                     .map(courseMapper::toResponse)
                     );
-                    coursePageCache.put(key, pageResponse);
+                    pageCache.put(key, pageResponse);
                     return pageResponse;
                 });
     }
@@ -62,14 +61,14 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public PageResponse<CourseResponseDto> findAll(Pageable pageable) {
         CacheKey key = GenericCacheKey.of(List.of(pageable.getPageNumber(), pageable.getPageSize()));
-        return coursePageCache.get(key)
+        return pageCache.get(key)
                 .orElseGet(() -> {
                     PageResponse<CourseResponseDto> pageResponse = PageResponse.of(
                             courseRepository
                                     .findAllOptimized(pageable)
                                     .map(courseMapper::toResponse)
                     );
-                    coursePageCache.put(key, pageResponse);
+                    pageCache.put(key, pageResponse);
                     return pageResponse;
                 });
     }
@@ -97,7 +96,7 @@ public class CourseServiceImpl implements CourseService {
         Instructor instructor = instructorRepository.findById(createDto.instructorId())
                 .orElseThrow(() -> new InstructorNotFoundException("instructor with id='%d' not found".formatted(createDto.instructorId())));
         Course toEntity = courseMapper.toEntity(createDto, category, instructor);
-        coursePageCache.invalidateCache();
+        pageCache.invalidateCache();
         return courseMapper.toResponse(courseRepository.save(toEntity));
     }
 
@@ -115,7 +114,7 @@ public class CourseServiceImpl implements CourseService {
                 .orElseThrow(() -> new InstructorNotFoundException("instructor with id='%d' not found".formatted(updateDto.instructorId())))
                 : course.getInstructor();
         courseMapper.updateEntity(updateDto, category, instructor, course);
-        coursePageCache.invalidateCache();
+        pageCache.invalidateCache();
         return courseMapper.toResponse(course);
     }
 
@@ -125,7 +124,7 @@ public class CourseServiceImpl implements CourseService {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException(COURSE_ID_NOT_FOUND.formatted(courseId)));
         courseRepository.delete(course);
-        coursePageCache.invalidateCache();
+        pageCache.invalidateCache();
     }
 
     @Override

@@ -8,4 +8,8 @@ public record GenericCacheKey(
     public static GenericCacheKey of(List<Object> params) {
         return new GenericCacheKey(List.copyOf(params));
     }
+
+    public static GenericCacheKey of(Object... params) {
+        return new GenericCacheKey(List.of(params));
+    }
 }

@@ -3,10 +3,12 @@ package com.dirijable.labs.lms.controller;
 import com.dirijable.labs.lms.dto.lesson.LessonCreateDto;
 import com.dirijable.labs.lms.dto.lesson.LessonResponseDto;
 import com.dirijable.labs.lms.dto.lesson.LessonUpdateDto;
+import com.dirijable.labs.lms.dto.page.PageResponse;
 import com.dirijable.labs.lms.service.lesson.LessonService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -43,8 +45,9 @@ public class LessonRestController {
     }
 
     @GetMapping
-    public ResponseEntity<List<LessonResponseDto>> findAllByCourseId(@PathVariable("courseId") Long courseId) {
-        return ResponseEntity.ok(lessonService.findAllByCourseId(courseId));
+    public ResponseEntity<PageResponse<LessonResponseDto>> findAllByCourseId(@PathVariable("courseId") Long courseId,
+                                                                             Pageable pageable) {
+        return ResponseEntity.ok(lessonService.findAllByCourseId(courseId, pageable));
     }
 
     @GetMapping("/{lessonId:\\d+}")
